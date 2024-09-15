@@ -1,0 +1,25 @@
+theme = "catppuccin_mocha"
+
+[editor]
+true-color = true
+color-modes = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["diagnostics", "primary-selection-length", "position", "spacer", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.indent-guides]
+enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.normal]
+C-s = ":w"
+C-q = ":q"
