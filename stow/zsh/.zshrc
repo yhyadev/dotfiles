@@ -6,8 +6,6 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 zstyle ':omz:update' frequency 7 # specify every 7 days as the frequency of remainder
 
-ENABLE_CORRECTION="true" # correct my commands
-
 plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
