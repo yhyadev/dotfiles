@@ -1,1 +1,2 @@
-stow/helix/.config/helix/runtime/grammars
+**/helix/runtime/grammars
+**/venv

@@ -4,6 +4,7 @@ local options = {
     zig = { "zig", "fmt" },
     css = { "prettier" },
     html = { "prettier" },
+    python = { "black" },
   },
 
   -- format_on_save = {

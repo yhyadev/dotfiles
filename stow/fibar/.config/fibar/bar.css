@@ -1,0 +1,87 @@
+/* we can use webcss variables, fabric compiles that to gtk css.
+   global variables can be stored in :vars */
+:vars {
+  --background: #1e1e2e;
+  --foreground: #cdd6f4;
+  --window-bg: transparent;
+  --module-bg: var(--background);
+  --red: #f38b18;
+  --green: #a6e3a1;
+  --blue: #89b4fa;
+}
+
+/* unset so we can style everything from the ground up. */
+* {
+  all: unset;
+  color: var(--foreground);
+  font-size: 11px;
+  font-family: "JetBrainsMono NerdFont", sans-serif;
+  border-radius: 10px;
+}
+
+button {
+  background-size: 400% 400%;
+}
+
+#bar-inner {
+  padding: 10px;
+  min-height: 15px;
+  background-color: var(--window-bg);
+}
+
+#tags {
+  padding: 8px;
+  min-width: 0px;
+  background-color: var(--module-bg);
+}
+
+#tags > button {
+  padding: 0px 8px;
+  transition: padding 0.06s;
+}
+
+#tags > button:hover {
+  padding: 0px 13px;
+  background-color: var(--blue);
+}
+
+#date-time {
+  padding: 0px 10px;
+  background-color: var(--module-bg);
+}
+
+#date-time > label,
+#tags > button > label {
+  font-weight: 900;
+}
+
+#cpu-glyph,
+#ram-glyph {
+    font-size: 10px;
+    margin: 5px;
+}
+
+#cpu-progress-bar,
+#ram-progress-bar {
+  color: transparent;
+  background-color: var(--module-bg);
+  margin: 20px;
+}
+
+#cpu-progress-bar {
+  border: solid 0px var(--green);
+}
+
+#ram-progress-bar {
+  border: solid 0px var(--red);
+}
+
+tooltip {
+  border: solid 2px;
+  border-color: var(--border-color);
+  background-color: var(--window-bg);
+}
+
+tooltip > * {
+  padding: 2px 4px;
+}
