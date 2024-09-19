@@ -1,122 +1,27 @@
 import psutil
-from typing import Literal
-from collections.abc import Iterable, Callable
 from fabric import Application
-from fabric.core.service import Property
-from fabric.widgets.eventbox import EventBox
-from fabric.widgets.button import Button
 from fabric.widgets.box import Box
 from fabric.widgets.label import Label
 from fabric.widgets.overlay import Overlay
 from fabric.widgets.datetime import DateTime
 from fabric.widgets.centerbox import CenterBox
-from fabric.system_tray.widgets import SystemTray
 from fabric.widgets.circularprogressbar import CircularProgressBar
 from fabric.widgets.wayland import WaylandWindow as Window
+from fabric.hyprland.widgets import WorkspaceButton
 from fabric.utils import (
     invoke_repeater,
     get_relative_path,
 )
 from fabric.utils.helpers import (
-    FormattedString,
     invoke_repeater,
     exec_shell_command_async,
 )
 
 
-class TagButton(Button):
-    @Property(int, "readable")
-    def id(self) -> int:
-        return self._id
-
-    @Property(bool, "read-write", default_value=False)
-    def active(self) -> bool:
-        return self._active
-
-    @active.setter
-    def active(self, value: bool):
-        self._active = value
-        if value is True:
-            self.urgent = False
-        (self.remove_style_class if not value else self.add_style_class)("active")
-        return self.do_bake_label()
-
-    @Property(bool, "read-write", default_value=False)
-    def urgent(self) -> bool:
-        return self._urgent
-
-    @urgent.setter
-    def urgent(self, value: bool):
-        self._urgent = value
-        (self.remove_style_class if not value else self.add_style_class)("urgent")
-        return self.do_bake_label()
-
-    @Property(bool, "read-write", default_value=True)
-    def empty(self) -> bool:
-        return self._empty
-
-    @empty.setter
-    def empty(self, value: bool):
-        self._empty = value
-        (self.remove_style_class if not value else self.add_style_class)("empty")
-        return self.do_bake_label()
-
-    def __init__(
-        self,
-        id: int,
-        label: FormattedString | str | None = None,
-        name: str | None = None,
-        visible: bool = True,
-        all_visible: bool = False,
-        style: str | None = None,
-        tooltip_text: str | None = None,
-        tooltip_markup: str | None = None,
-        h_align: Literal["fill", "start", "end", "center", "baseline"] | None = None,
-        v_align: Literal["fill", "start", "end", "center", "baseline"] | None = None,
-        h_expand: bool = False,
-        v_expand: bool = False,
-        size: Iterable[int] | int | None = None,
-        **kwargs,
-    ):
-        super().__init__(
-            None,
-            None,
-            None,
-            name,
-            visible,
-            all_visible,
-            style,
-            tooltip_text,
-            tooltip_markup,
-            h_align,
-            v_align,
-            h_expand,
-            v_expand,
-            size,
-            **kwargs,
-        )
-        self._id: int = id
-        self._label: FormattedString | None = (
-            FormattedString(label) if isinstance(label, str) else label
-        )
-        self._active: bool = False
-        self._urgent: bool = False
-        self._empty: bool = True
-
-        self.active = False
-        self.urgent = False
-        self.empty = True
-
-    def do_bake_label(self):
-        if not self._label:
-            return
-        return self.set_label(self._label.format(button=self))
-
-
-class Tags(Box):
+class Workspaces(Box):
     @staticmethod
     def default_buttons_factory(button_id: int):
-        return TagButton(id=button_id, label=str(button_id))
+        return WorkspaceButton(id=button_id, label=str(button_id))
 
     def __init__(
         self,
@@ -126,12 +31,12 @@ class Tags(Box):
         self._container = Box(**kwargs)
         self.children = self._container
 
-        self._buttons: dict[int, TagButton] = {}
+        self._buttons: dict[int, WorkspaceButton] = {}
 
         for i in range(1, 10):
-            self.insert_button(Tags.default_buttons_factory(i))
+            self.insert_button(Workspaces.default_buttons_factory(i))
 
-    def insert_button(self, button: TagButton) -> None:
+    def insert_button(self, button: WorkspaceButton) -> None:
         self._buttons[button.id] = button
         self._container.add(button)
         button.connect("clicked", self.do_handle_button_press)
@@ -142,18 +47,18 @@ class Tags(Box):
             self._container.reorder_child(child, (child.id - 1))
         return
 
-    def remove_button(self, button: TagButton) -> None:
+    def remove_button(self, button: WorkspaceButton) -> None:
         if self._buttons.pop(button.id, None) is not None:
             self._container.remove(button)
         return button.destroy()
 
-    def lookup_or_bake_button(self, workspace_id: int) -> TagButton | None:
+    def lookup_or_bake_button(self, workspace_id: int) -> WorkspaceButton | None:
         if not (btn := self._buttons.get(workspace_id)):
             if self._buttons_factory:
                 btn = self._buttons_factory(workspace_id)
         return btn
 
-    def do_handle_button_press(self, button: TagButton):
+    def do_handle_button_press(self, button: WorkspaceButton):
         exec_shell_command_async(
             ["riverctl", "set-focused-tags", str(1 << (button.id - 1))], lambda _: None
         )
@@ -173,8 +78,8 @@ class StatusBar(Window):
             all_visible=False,
         )
 
-        self.tags = Tags(
-            name="tags",
+        self.workspaces = Workspaces(
+            name="workspaces",
             spacing=4,
         )
 
@@ -188,7 +93,7 @@ class StatusBar(Window):
                 name="start-container",
                 spacing=4,
                 orientation="h",
-                children=self.tags,
+                children=self.workspaces,
             ),
             center_children=Box(
                 name="center-container",

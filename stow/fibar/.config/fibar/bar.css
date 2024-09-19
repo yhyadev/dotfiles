@@ -29,18 +29,18 @@ button {
   background-color: var(--window-bg);
 }
 
-#tags {
+#workspaces {
   padding: 8px;
   min-width: 0px;
   background-color: var(--module-bg);
 }
 
-#tags > button {
+#workspaces > button {
   padding: 0px 8px;
   transition: padding 0.06s;
 }
 
-#tags > button:hover {
+#workspaces > button:hover {
   padding: 0px 13px;
   background-color: var(--blue);
 }
@@ -51,7 +51,7 @@ button {
 }
 
 #date-time > label,
-#tags > button > label {
+#workspaces > button > label {
   font-weight: 900;
 }
 
