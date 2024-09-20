@@ -79,7 +79,7 @@ riverctl rule-add -app-id "bar" csd
 riverctl map normal Super Return spawn alacritty
 riverctl map normal Super Space spawn "rofi -show drun"
 
-riverctl map normal PrtScr spawn "flameshot gui"
+riverctl map normal Super P spawn 'grim -o ~/Downloads -g "$(slurp)" - | wl-copy'
 
 riverctl spawn rivertile
 riverctl default-layout rivertile
@@ -90,4 +90,4 @@ riverctl border-width 0
 riverctl hide-cursor when-typing enabled
 
 swaybg -i ~/Wallpapers/some-wallpaper.jpg &
-~/.config/fibar/venv/bin/python3 ~/.config/fibar/bar.py &
+~/.config/venv/bin/python3 ~/.config/fibar/bar.py &
