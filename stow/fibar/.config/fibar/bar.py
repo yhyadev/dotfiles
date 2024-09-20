@@ -115,7 +115,6 @@ class StatusBar(Window):
         self.ram_progress_bar = CircularProgressBar(name="ram-progress-bar", size=24)
 
         self.children = CenterBox(
-            name="bar-inner",
             start_children=Box(
                 name="start-container",
                 spacing=4,

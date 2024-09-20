@@ -3,8 +3,6 @@
 :vars {
   --background: #1e1e2e;
   --foreground: #cdd6f4;
-  --window-bg: transparent;
-  --module-bg: var(--background);
   --red: #f38b18;
   --green: #a6e3a1;
   --blue: #89b4fa;
@@ -23,16 +21,10 @@ button {
   background-size: 400% 400%;
 }
 
-#bar-inner {
-  padding: 10px;
-  min-height: 15px;
-  background-color: var(--window-bg);
-}
-
 #workspaces {
   padding: 8px;
   min-width: 0px;
-  background-color: var(--module-bg);
+  background-color: var(--background);
 }
 
 #workspaces > button {
@@ -48,7 +40,7 @@ button {
 
 #date-time {
   padding: 0px 10px;
-  background-color: var(--module-bg);
+  background-color: var(--background);
 }
 
 #date-time > label,
@@ -59,14 +51,12 @@ button {
 #cpu-glyph,
 #ram-glyph {
     font-size: 10px;
-    margin: 5px;
 }
 
 #cpu-progress-bar,
 #ram-progress-bar {
   color: transparent;
-  background-color: var(--module-bg);
-  margin: 20px;
+  background-color: var(--background);
 }
 
 #cpu-progress-bar {
@@ -75,14 +65,4 @@ button {
 
 #ram-progress-bar {
   border: solid 0px var(--red);
-}
-
-tooltip {
-  border: solid 2px;
-  border-color: var(--border-color);
-  background-color: var(--window-bg);
-}
-
-tooltip > * {
-  padding: 2px 4px;
 }
