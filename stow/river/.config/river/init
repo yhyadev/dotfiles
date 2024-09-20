@@ -90,3 +90,4 @@ riverctl border-width 0
 riverctl hide-cursor when-typing enabled
 
 swaybg -i ~/Wallpapers/some-wallpaper.jpg &
+~/.config/fibar/venv/bin/python3 ~/.config/fibar/bar.py &
