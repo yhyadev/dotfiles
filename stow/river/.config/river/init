@@ -87,7 +87,5 @@ rivertile -view-padding 6 -outer-padding 6 &
 
 riverctl border-width 0
 
-riverctl hide-cursor when-typing enabled
-
 swaybg -i ~/Wallpapers/some-wallpaper.jpg &
 ~/.config/venv/bin/python3 ~/.config/fibar/bar.py &
