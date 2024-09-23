@@ -33,7 +33,28 @@ return {
 
   {
     "NMAC427/guess-indent.nvim",
-    opts = {},
     event = "BufEnter",
+    opts = {},
   },
+
+  {
+    "supermaven-inc/supermaven-nvim",
+    event = "BufEnter",
+    opts = {},
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    opts = {
+      sources = {
+        { name = "supermaven"},
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "nvim_lua" },
+        { name = "path" },
+      },
+    },
+  }
 }

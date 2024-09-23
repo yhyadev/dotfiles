@@ -22,6 +22,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "b8ad0473f4d5d7b59e17a67ad0b68711b0232486" },
   "nvim-web-devicons": { "branch": "master", "commit": "26220156aafb198b2de6a4cf80c1b120a3768da0" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "supermaven-nvim": { "branch": "main", "commit": "3da044bbc23a354e9cb17602ed2d5ca8528173bb" },
   "telescope.nvim": { "branch": "master", "commit": "b5fd7f7ae0ea4537511077ed8ef4a6021cedba2f" },
   "ui": { "branch": "v2.5", "commit": "dbdd2cfa7b6267e007e0b87ed7e2ea5c6979ef22" },
   "which-key.nvim": { "branch": "main", "commit": "fb070344402cfc662299d9914f5546d840a22126" }
