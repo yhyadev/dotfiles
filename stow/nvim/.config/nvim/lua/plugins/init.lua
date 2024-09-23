@@ -30,4 +30,10 @@ return {
       require "configs.treesitter"
     end,
   },
+
+  {
+    "NMAC427/guess-indent.nvim",
+    opts = {},
+    event = "BufEnter",
+  },
 }
