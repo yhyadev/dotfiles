@@ -39,7 +39,7 @@ return {
 
   {
     "supermaven-inc/supermaven-nvim",
-    event = "BufEnter",
+    event = "InsertEnter",
     opts = {},
   },
 
