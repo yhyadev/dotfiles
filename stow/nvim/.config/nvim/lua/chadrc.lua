@@ -18,7 +18,6 @@ M.base46 = {
 
 M.ui = {
   statusline = {
-    theme = "default",
     separator_style = "round",
   },
 }
