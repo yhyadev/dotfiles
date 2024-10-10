@@ -22,20 +22,25 @@ button {
 }
 
 #workspaces {
-  padding: 8px;
+  padding: 9px;
   min-width: 0px;
   background-color: var(--background);
 }
 
 #workspaces > button {
-  padding: 0px 8px;
-  transition: padding 0.06s;
+  padding: 0px 7px;
+  transition: padding 0.08s;
+  background-color: var(--blue);
 }
 
 #workspaces > button.active,
 #workspaces > button:hover {
-  padding: 0px 13px;
-  background-color: var(--blue);
+  padding: 0px 15px;
+  background-color: var(--green);
+}
+
+#workspaces > button:hover {
+  background-color: var(--red);
 }
 
 #date-time {

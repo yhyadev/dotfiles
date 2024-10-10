@@ -31,7 +31,7 @@ river = AstalRiver.River.new()
 class Workspaces(Box):
     @staticmethod
     def default_buttons_factory(button_id: int):
-        return WorkspaceButton(id=button_id, label=str(button_id))
+        return WorkspaceButton(id=button_id, label=" ")
 
     def __init__(
         self,
