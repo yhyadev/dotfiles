@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "catppuccin",
+  theme = "tokyonight",
 
   hl_add = {
     ["@constant.zig"] = { fg = "orange" },
@@ -20,6 +20,10 @@ M.ui = {
   statusline = {
     separator_style = "round",
   },
+
+  cmp = {
+    style = "atom",
+  }
 }
 
 M.nvdash = {

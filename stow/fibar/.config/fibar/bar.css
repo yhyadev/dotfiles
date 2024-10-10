@@ -1,11 +1,11 @@
 /* we can use webcss variables, fabric compiles that to gtk css.
    global variables can be stored in :vars */
 :vars {
-  --background: #1e1e2e;
-  --foreground: #cdd6f4;
-  --red: #f38b18;
-  --green: #a6e3a1;
-  --blue: #89b4fa;
+  --background: #1a1b28;
+  --foreground: #a9b1d6;
+  --red: #f7768e;
+  --green: #9ece6a;
+  --blue: #7aa2f7;
 }
 
 /* unset so we can style everything from the ground up. */
