@@ -15,14 +15,6 @@ riverctl map normal Super Comma focus-output previous
 riverctl map normal Super+Shift Period send-to-output next
 riverctl map normal Super+Shift Comma send-to-output previous
 
-riverctl map normal Super+Shift Return zoom
-
-riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
-
-riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
-riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
-
 riverctl map normal Super+Alt H move left 100
 riverctl map normal Super+Alt J move down 100
 riverctl map normal Super+Alt K move up 100
@@ -56,14 +48,7 @@ all_tags=$(((1 << 32) - 1))
 riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
-riverctl map normal Super Space toggle-float
-
 riverctl map normal Super F toggle-fullscreen
-
-riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
-riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
-riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
-riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
 
 riverctl declare-mode passthrough
 
@@ -80,10 +65,6 @@ riverctl map normal Super Return spawn alacritty
 riverctl map normal Super Space spawn "rofi -show drun"
 
 riverctl map normal Super P spawn 'grim -o ~/Downloads -g "$(slurp)" - | wl-copy'
-
-riverctl spawn rivertile
-riverctl default-layout rivertile
-rivertile -view-padding 6 -outer-padding 6 &
 
 riverctl border-width 0
 
