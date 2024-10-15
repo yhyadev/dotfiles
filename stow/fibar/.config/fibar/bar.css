@@ -22,13 +22,13 @@ button {
 }
 
 #workspaces {
-  padding: 9px;
+  padding: 10px;
   min-width: 0px;
   background-color: var(--background);
 }
 
 #workspaces > button {
-  padding: 0px 7px;
+  padding: 0px 5px;
   transition: padding 0.08s;
   background-color: var(--blue);
 }
