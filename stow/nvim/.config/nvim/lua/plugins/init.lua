@@ -48,7 +48,7 @@ return {
     event = "InsertEnter",
     opts = {
       sources = {
-        { name = "supermaven"},
+        { name = "supermaven" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
@@ -56,5 +56,10 @@ return {
         { name = "path" },
       },
     },
-  }
+  },
+
+  {
+    "NvChad/timerly",
+    cmd = "TimerlyToggle",
+  },
 }
