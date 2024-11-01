@@ -30,6 +30,8 @@ class AppLauncher(Window):
             **kwargs,
         )
 
+        self.add_keybinding("Escape", lambda *_: self.application.quit())
+
         self._arranger_handler: int = 0
         self._all_apps = get_desktop_applications()
 
@@ -39,7 +41,6 @@ class AppLauncher(Window):
             name="search",
             h_expand=True,
             notify_text=lambda entry, *_: self.arrange_viewport(entry.get_text()),
-            on_key_press_event=lambda _, event: event.keyval == Gdk.KEY_Escape and self.application.quit()
         )
 
         self.viewed_apps = ScrolledWindow(
