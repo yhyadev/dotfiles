@@ -1,0 +1,29 @@
+:vars {
+  --background: #1a1b28;
+  --foreground: #a9b1d6;
+  --red: #f7768e;
+  --green: #9ece6a;
+  --blue: #7aa2f7;
+}
+
+* {
+  all: unset;
+  background: transparent;
+  color: var(--foreground);
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+#search,
+#viewed_apps {
+  background: var(--background);
+  padding: 10px;
+}
+
+#viewed_app:hover,
+#viewed_app:focus {
+  border-left: solid 1px var(--blue);
+  border-radius: 0;
+  padding-left: 5px;
+}

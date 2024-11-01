@@ -62,7 +62,7 @@ riverctl rule-add -app-id 'float*' float
 riverctl rule-add -app-id "bar" csd
 
 riverctl map normal Super Return spawn alacritty
-riverctl map normal Super Space spawn "rofi -show drun"
+riverctl map normal Super Space spawn "~/.config/venv/bin/python3 ~/.config/fimon/app_launcher.py"
 
 riverctl map normal Super P spawn 'grim -o ~/Downloads -g "$(slurp)" - | wl-copy'
 
