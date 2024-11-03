@@ -45,8 +45,8 @@ class AppLauncher(Window):
 
         self.viewed_apps = ScrolledWindow(
             name="viewed_apps",
-            min_content_size=(280, 360),
-            max_content_size=(280 * 2, 360),
+            min_content_size=(380, 300),
+            max_content_size=(380 * 2, 300),
             kinetic_scroll=True,
             child=self.viewport,
         )

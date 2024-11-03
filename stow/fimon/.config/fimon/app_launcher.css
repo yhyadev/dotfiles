@@ -18,12 +18,13 @@
 #search,
 #viewed_apps {
   background: var(--background);
+  border: solid 1px var(--blue);
   padding: 10px;
 }
 
 #viewed_app:hover,
 #viewed_app:focus {
-  border-left: solid 1px var(--blue);
+  border-left: solid 1px var(--foreground);
   border-radius: 0;
   padding-left: 5px;
 }
