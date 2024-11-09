@@ -62,9 +62,4 @@ return {
       },
     },
   },
-
-  {
-    "NvChad/timerly",
-    cmd = "TimerlyToggle",
-  },
 }
