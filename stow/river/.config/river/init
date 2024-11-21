@@ -68,5 +68,5 @@ riverctl map normal Super P spawn 'grim -o ~/Downloads -g "$(slurp)" - | wl-copy
 
 riverctl border-width 0
 
-swaybg -i ~/Wallpapers/some-wallpaper.jpg &
+swaybg -i ~/Wallpapers/some-wallpaper.png &
 ~/.config/venv/bin/python3 ~/.config/fibar/bar.py &

@@ -1,8 +1,7 @@
 [
-  (array)
-  (map)
-
-  (body)
+  "("
+  "["
+  "{"
 ] @indent
 
 [

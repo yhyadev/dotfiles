@@ -10,3 +10,16 @@ shebangs = ["syphon"]
 [[grammar]]
 name = "syphon"
 source = { path = "/home/yhya/Programming/tree-sitter-syphon" }
+
+[[language]]
+name = "cerium"
+scope = "scope.cerium"
+injection-regex = "cerium"
+file-types = ["cerm"]
+comment-tokens = ["//"]
+indent = { tab-width = 4, unit = " " }
+shebangs = ["cerium"]
+
+[[grammar]]
+name = "cerium"
+source = { path = "/home/yhya/Programming/tree-sitter-cerium" }

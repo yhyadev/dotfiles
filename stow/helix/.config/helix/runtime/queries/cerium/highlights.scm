@@ -1,7 +1,15 @@
+; Types
+
+(type (identifier) @type)
+(type (struct_type (identifier) @variable.other.member))
+
 ; Function and Method calls
 
 (call (member key: (identifier) @function.method))
+
 (call (identifier) @function)
+(function (identifier) @function)
+(extern_function (identifier) @function)
 
 ; Parameters
 
@@ -14,14 +22,11 @@
 
 ; Literals
 
-(none) @constant.builtin
-
-[(true) (false)] @constant.builtin.boolean
-
 (int) @constant.numeric.integer
 (float) @constant.numeric.float
 
 (string) @string
+(character) @constant.character
 
 ; Comments
 
@@ -31,47 +36,67 @@
 
 "fn" @keyword.function
 
-"return" @keyword.control.return
-
 "while" @keyword.control.repeat
 
-[
- "if"
- "else"
-] @keyword.control.conditional
+"return" @keyword.control.return
 
 [
  (break)
  (continue)
 ] @keyword.control
 
+[
+ "if"
+ "else"
+] @keyword.control.conditional
+
+"as" @keyword.operator
+
+[
+ "extern"
+ "var"
+ "type"
+] @keyword.storage.type
+
+[
+ "const"
+] @keyword.storage.modifier
+
+[
+ "struct"
+ "enum"
+ "asm"
+] @keyword
+
+
 ; Operators
 
 [
+  "&"
+  "~"
   "+"
   "-"
   "/"
   "*"
-  "**"
   "%"
+  "<<"
+  ">>"
+  "&"
+  "^"
+  "|"
   "<"
   ">"
   "=="
   "="
-  "+="
-  "-="
-  "/="
-  "*="
-  "**"
-  "%="
 ] @operator
+
 
 ; Punctuation
 
 [
-  ":"
   ","
   "."
+  ";"
 ] @punctuation.delimiter
 
 [
@@ -82,4 +107,3 @@
  "{"
  "}"
 ] @punctuation.bracket
-

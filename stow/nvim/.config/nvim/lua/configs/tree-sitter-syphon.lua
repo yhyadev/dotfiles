@@ -2,9 +2,8 @@ local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
 parser_config.syphon = {
   install_info = {
-    url = "https://github.com/yhyadev/tree-sitter-syphon",
+    url = "/home/yhya/Programming/tree-sitter-syphon",
     files = { "src/parser.c" },
-    rev = "eb0ccd78157c3e9f688c9968127209424d66a109",
   },
 
   filetype = "sy",

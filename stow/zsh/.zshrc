@@ -7,12 +7,12 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 zstyle ':omz:update' frequency 7 # specify every 7 days as the frequency of remainder
 
 plugins=(
-    zsh-autosuggestions
-    zsh-syntax-highlighting
     wakatime
     git
     golang rust pip python 
     themes
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh

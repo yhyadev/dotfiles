@@ -5,6 +5,8 @@ local options = {
     rust = { "rustfmt" },
     css = { "prettier" },
     html = { "prettier" },
+    json = { "prettier" },
+    javascript = { "prettier" },
     python = { "black" },
   },
 

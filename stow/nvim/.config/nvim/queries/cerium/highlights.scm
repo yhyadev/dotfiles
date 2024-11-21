@@ -1,3 +1,4 @@
+
 ; Variables
 
 (identifier) @variable
@@ -7,21 +8,27 @@
 
 (parameters (identifier) @variable.parameter)
 
+; Types
+
+(type (identifier) @type)
+(type (struct_type (identifier) @variable.member))
+(type_alias (identifier) @type.definition)
+
 ; Function and Method calls
+
+(function (identifier) @function)
+(extern_function (identifier) @function)
 
 (call (identifier) @function.call)
 (call (member key: (identifier) @function.method.call))
 
 ; Literals
 
-(none) @constant.builtin
-
-[(true) (false)] @boolean
-
 (int) @number
 (float) @number.float
 
 (string) @string
+(character) @character
 
 ; Comments
 
@@ -33,7 +40,11 @@
 
 "return" @keyword.return
 
-"while" @keyword.repeat
+[
+ "while"
+ (break)
+ (continue)
+] @keyword.repeat
 
 [
  "if"
@@ -41,38 +52,44 @@
 ] @keyword.conditional
 
 [
-  (break)
-  (continue)
+ "struct"
+ "enum"
+] @keyword.type
+
+"const" @keyword.modifier
+
+"as" @keyword.operator
+
+[
+ "extern"
+ "var"
+ "type"
+ "asm"
 ] @keyword
 
 ; Operators
 
 [
+  "&"
+  "~"
   "+"
   "-"
   "/"
   "*"
-  "**"
   "%"
   "<"
   ">"
   "=="
   "="
-  "+="
-  "-="
-  "/="
-  "*="
-  "**"
-  "%="
 ] @operator
 
 
 ; Punctuation
 
 [
-  ":"
-  ","
   "."
+  ","
+  ";"
 ] @punctuation.delimiter
 
 [

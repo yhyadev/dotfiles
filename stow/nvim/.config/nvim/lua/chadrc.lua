@@ -23,7 +23,7 @@ M.ui = {
 
   cmp = {
     style = "atom",
-  }
+  },
 }
 
 M.nvdash = {
