@@ -1,7 +1,7 @@
 ; Types
 
 (type (identifier) @type)
-(type (struct_type (identifier) @variable.other.member))
+(type (struct_type (struct_type_fields (identifier) @variable.other.member)))
 
 ; Function and Method calls
 
@@ -16,6 +16,8 @@
 (parameters (identifier) @variable.parameter)
 
 ; Variables
+
+(module_specifier (identifier) @namespace)
 
 (member key: (identifier) @variable.other.member)
 (identifier) @variable
@@ -41,30 +43,37 @@
 "return" @keyword.control.return
 
 [
+ "if"
+ "else"
+ "switch"
+] @keyword.control.conditional
+
+[
+ "module"
+ "import"
+] @keyword.control.import
+
+[
  (break)
  (continue)
 ] @keyword.control
 
-[
- "if"
- "else"
-] @keyword.control.conditional
-
 "as" @keyword.operator
 
 [
- "extern"
  "var"
  "type"
+ "struct"
+ "enum"
 ] @keyword.storage.type
 
 [
+ "extern"
+ "export"
  "const"
 ] @keyword.storage.modifier
 
 [
- "struct"
- "enum"
  "asm"
 ] @keyword
 
