@@ -9,40 +9,19 @@
 * {
   all: unset;
   color: var(--foreground);
-  font-size: 11px;
   font-family: "JetBrainsMono NerdFont", sans-serif;
-  border-radius: 10px;
+  padding: 2px 0px;
 }
 
 button {
   background-size: 400% 400%;
 }
 
-#workspaces {
-  padding: 10px;
-  min-width: 0px;
-  background-color: var(--background);
-}
-
-#workspaces > button {
-  padding: 0px 5px;
-  transition: padding 0.08s;
-  background-color: var(--blue);
-}
-
-#workspaces > button.active,
-#workspaces > button:hover {
-  padding: 0px 15px;
-  background-color: var(--green);
-}
-
-#workspaces > button:hover {
-  background-color: var(--red);
-}
-
 #date-time {
+  font-size: 20px;
   padding: 0px 10px;
-  background-color: var(--background);
+  color: var(--foreground);
+  border-radius: 5px;
 }
 
 #date-time > label,
@@ -52,7 +31,7 @@ button {
 
 #cpu-glyph,
 #ram-glyph {
-    font-size: 10px;
+  font-size: 12px;
 }
 
 #cpu-progress-bar,
