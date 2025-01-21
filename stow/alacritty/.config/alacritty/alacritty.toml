@@ -17,6 +17,9 @@ style = "Italic"
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
+[window]
+padding = { x = 10, y = 10 }
+
 [general]
 import = [
     "~/.config/alacritty/themes/tokyonight.toml"

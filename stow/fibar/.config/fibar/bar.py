@@ -17,17 +17,6 @@ from fabric.utils.helpers import (
     exec_shell_command_async,
 )
 
-
-# Waiting for fabric to make its own river stuff, until then we will use AstalRiver
-import gi
-
-gi.require_version("AstalRiver", "0.1")
-
-from gi.repository import AstalRiver
-
-river = AstalRiver.River.new()
-
-
 class Workspaces(Box):
     @staticmethod
     def default_buttons_factory(button_id: int):
@@ -45,23 +34,6 @@ class Workspaces(Box):
 
         for i in range(1, 10):
             self.insert_button(Workspaces.default_buttons_factory(i))
-
-        self.update_buttons()
-        river.connect("changed", lambda *_: self.update_buttons())
-
-    def update_buttons(self) -> None:
-        focused_tags = int(
-            river.get_output(river.get_focused_output()).get_focused_tags()
-        )
-
-        # It feels a little magicky but we want it to be in a limited zero extended big endian bit representation
-        focused_tag_bits = bin(focused_tags)[2:][::-1].ljust(9, "0")[0:9]
-
-        for i, focused_tag_bit in enumerate(focused_tag_bits):
-            if focused_tag_bit == "1":
-                self._buttons[i + 1].active = True
-            else:
-                self._buttons[i + 1].active = False
 
     def insert_button(self, button: WorkspaceButton) -> None:
         self._buttons[button.id] = button
@@ -86,9 +58,7 @@ class Workspaces(Box):
         return btn
 
     def do_handle_button_press(self, button: WorkspaceButton):
-        exec_shell_command_async(
-            ["riverctl", "set-focused-tags", str(1 << (button.id - 1))], lambda _: None
-        )
+        exec_shell_command_async(f"swaymsg workspace number {button.id}")
 
 
 class StatusBar(Window):
