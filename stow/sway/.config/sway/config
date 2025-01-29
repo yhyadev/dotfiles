@@ -112,7 +112,7 @@ bindsym $mod+a focus parent
 for_window [app_id=".*"] floating enable
 for_window [app_id=".*"] border none
 
-corner_radius 10
+corner_radius 8
 
 input "49396:432:USB_usb_keyboard" {
     repeat_delay 500
@@ -158,5 +158,3 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 include /etc/sway/config.d/*
-
-exec "~/.config/venv/bin/python3 ~/.config/fibar/bar.py &"
