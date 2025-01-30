@@ -48,30 +48,6 @@ return {
   },
 
   {
-    "supermaven-inc/supermaven-nvim",
-    event = "InsertEnter",
-    opts = {
-      disable_inline_completion = true,
-      disable_keymaps = true,
-    },
-  },
-
-  {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    opts = {
-      sources = {
-        { name = "supermaven" },
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "nvim_lua" },
-        { name = "path" },
-      },
-    },
-  },
-
-  {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
     cmd = "Leet",
