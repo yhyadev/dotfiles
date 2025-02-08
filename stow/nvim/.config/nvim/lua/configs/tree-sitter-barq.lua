@@ -1,16 +1,16 @@
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
-parser_config.cerium = {
+parser_config.barq = {
   install_info = {
-    url = "/home/yhya/Programming/tree-sitter-cerium",
+    url = "/home/yhya/Programming/tree-sitter-barq",
     files = { "src/parser.c" },
   },
 
-  filetype = "cerm",
+  filetype = "bq",
 }
 
 vim.filetype.add {
   extension = {
-    cerm = "cerium",
+    bq = "barq",
   },
 }

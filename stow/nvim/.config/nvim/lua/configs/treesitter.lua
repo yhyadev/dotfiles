@@ -21,4 +21,4 @@ require("nvim-treesitter.configs").setup {
 }
 
 require "configs.tree-sitter-syphon"
-require "configs.tree-sitter-cerium"
+require "configs.tree-sitter-barq"

@@ -12,14 +12,14 @@ name = "syphon"
 source = { path = "/home/yhya/Programming/tree-sitter-syphon" }
 
 [[language]]
-name = "cerium"
-scope = "scope.cerium"
-injection-regex = "cerium"
-file-types = ["cerm"]
+name = "barq"
+scope = "scope.barq"
+injection-regex = "barq"
+file-types = ["bq"]
 comment-tokens = ["//"]
 indent = { tab-width = 4, unit = " " }
-shebangs = ["cerium"]
+shebangs = ["barq"]
 
 [[grammar]]
-name = "cerium"
-source = { path = "/home/yhya/Programming/tree-sitter-cerium" }
+name = "barq"
+source = { path = "/home/yhya/Programming/tree-sitter-barq" }
