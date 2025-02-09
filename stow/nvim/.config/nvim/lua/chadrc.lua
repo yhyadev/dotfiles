@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "rxyhn",
+  theme = "tokyonight",
 
   hl_add = {
     ["@constant.zig"] = { fg = "orange" },
