@@ -7,6 +7,9 @@ local options = {
     html = { "prettier" },
     json = { "prettier" },
     javascript = { "prettier" },
+    typescript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescriptreact = { "prettier" },
     python = { "black" },
   },
 
