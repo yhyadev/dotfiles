@@ -12,11 +12,6 @@ return {
   },
 
   {
-    "wakatime/vim-wakatime",
-    lazy = false,
-  },
-
-  {
     "NvChad/base46",
     branch = "v3.0",
   },
