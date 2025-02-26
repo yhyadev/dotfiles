@@ -27,3 +27,5 @@ export PATH="$HOME/.local/bin/c3/:$PATH"
 # This section can be safely removed at any time if needed.
 test -r '/home/yhya/.opam/opam-init/init.fish' && source '/home/yhya/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/yhya/.ghcup/bin # ghcup-env
