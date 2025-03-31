@@ -25,3 +25,9 @@ lspconfig.rust_analyzer.setup {
     on_attach = nvlsp.on_attach,
     capabilities = nvlsp.capabilities,
 }
+
+vim.diagnostic.config({
+    severity_sort = true,
+    virtual_text = false,
+    virtual_lines = true,
+})

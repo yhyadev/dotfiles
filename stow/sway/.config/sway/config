@@ -114,7 +114,7 @@ for_window [app_id=".*"] border none
 
 corner_radius 8
 
-input "49396:432:USB_usb_keyboard" {
+input * {
     repeat_delay 500
     repeat_rate 50
 }

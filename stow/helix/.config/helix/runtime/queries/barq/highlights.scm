@@ -1,21 +1,25 @@
 ; Types
 
+(type (member key: (identifier) @type))
 (type (identifier) @type)
 (type (struct_type (struct_type_fields (identifier) @variable.other.member)))
+(type_right (member key: (identifier) @type))
+(type_right (identifier) @type)
+(type_right (struct_type (struct_type_fields (identifier) @variable.other.member)))
 
 ; Function and Method calls
 
 (call (special_identifier) @function.builtin)
-
 (call (member key: (identifier) @function.method))
-
 (call (identifier) @function)
-(function (identifier) @function)
-(extern_function (identifier) @function)
 
 ; Parameters
 
 (parameters (identifier) @variable.parameter)
+
+; Attributes
+
+(attribute (special_identifier) @attribute)
 
 ; Variables
 
@@ -46,6 +50,7 @@
  "if"
  "else"
  "switch"
+  "then"
 ] @keyword.control.conditional
 
 [
@@ -57,22 +62,13 @@
 "as" @keyword.operator
 
 [
- "var"
- "type"
  "struct"
  "enum"
 ] @keyword.storage.type
 
-[
- "extern"
- "export"
- "const"
-] @keyword.storage.modifier
+"const" @keyword.storage.modifier
 
-[
- "asm"
-] @keyword
-
+"asm" @keyword
 
 ; Operators
 
