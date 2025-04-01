@@ -157,4 +157,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+seat "*" hide_cursor 5000
+
 include /etc/sway/config.d/*
