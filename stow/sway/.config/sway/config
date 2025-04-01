@@ -112,6 +112,8 @@ bindsym $mod+a focus parent
 for_window [app_id=".*"] floating enable
 for_window [app_id=".*"] border none
 
+seat * hide_cursor 5000
+
 corner_radius 8
 
 input * {
@@ -156,7 +158,5 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-seat "*" hide_cursor 5000
 
 include /etc/sway/config.d/*
