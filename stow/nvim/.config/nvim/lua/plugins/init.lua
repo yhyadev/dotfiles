@@ -22,6 +22,18 @@ return {
   },
 
   {
+    "NvZone/timerly",
+    cmd = "TimerlyToggle",
+    dependencies = "NvZone/volt",
+    opts = {
+      position = "top-right",
+    },
+    keys = {
+      { "<leader>tm", "<cmd>TimerlyToggle<cr>", desc = "toggle Timerly" }
+    }
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {

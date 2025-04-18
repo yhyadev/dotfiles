@@ -1,33 +1,25 @@
--- load defaults i.e lua_lsp
-require("nvchad.configs.lspconfig").defaults()
-
-local lspconfig = require "lspconfig"
-
-local servers = { "html", "cssls", "ts_ls", "pyright", "clangd", "ocamllsp", "hls" }
-
 local nvlsp = require "nvchad.configs.lspconfig"
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
+nvlsp.defaults()
 
-lspconfig.zls.setup {
-    on_attach = nvlsp.on_attach,
-    capabilities = nvlsp.capabilities,
-}
+local servers = { "html", "cssls", "ts_ls", "pyright", "clangd", "ocamllsp", "hls", "zls", "rust_analyzer" }
 
-lspconfig.rust_analyzer.setup {
-    on_attach = nvlsp.on_attach,
-    capabilities = nvlsp.capabilities,
-}
+vim.lsp.enable(servers)
 
-vim.diagnostic.config({
-    severity_sort = true,
-    virtual_text = false,
-    virtual_lines = true,
+vim.lsp.config("zls", {
+  on_init = function() end,
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
 })
+
+vim.lsp.config("rust_analyzer", {
+  on_init = function() end,
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
+})
+
+vim.diagnostic.config {
+  severity_sort = true,
+  virtual_text = false,
+  virtual_lines = true,
+}
