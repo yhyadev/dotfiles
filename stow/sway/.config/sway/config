@@ -28,6 +28,9 @@ bindsym $mod+Shift+c reload
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaymsg exit
 
+# Move mouse using keyboard
+bindsym $mod+Shift+m exec warpd --normal
+
 # Start app launcher
 bindsym $mod+d exec $menu
 
