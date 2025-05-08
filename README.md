@@ -1,4 +1,4 @@
-# Yhya's Linux Dotfiles
+# My Linux Dotfiles
 
 ## Installation
 
@@ -19,11 +19,4 @@ cd stow
 
 ```
 stow * -t ~
-```
-
-4. Build suckless configurations using `make` (replace `dwm` with the intended app)
-
-```
-cd ~/.config/dwm
-make install clean
 ```
