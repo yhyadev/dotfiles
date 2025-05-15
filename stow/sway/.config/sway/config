@@ -35,7 +35,8 @@ bindsym $mod+Shift+m exec warpd --normal
 bindsym $mod+d exec $menu
 
 # Screenshot
-bindsym $mod+p exec 'grim -o ~/Downloads -g "$(slurp)" - | wl-copy'
+bindsym $mod+p exec 'grim -g "$(slurp)" - | wl-copy'
+bindsym $mod+Shift+p exec 'grim - | wl-copy'
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
