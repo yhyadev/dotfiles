@@ -77,7 +77,8 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return { spawn "alacritty"; }
+    Mod+Return  { spawn "alacritty"; }
+    Mod+Space   { spawn "fuzzel"; }
     Mod+Shift+M { spawn "warpd" "--normal"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
